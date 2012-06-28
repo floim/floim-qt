@@ -18,6 +18,7 @@ public slots:
     void setUnreadCount(int count);
     void showMessage(QString icon,QString title,QString msg);
     void openUrl(QString url);
+    QIcon iconWithUnread(QString unread, double scale);
 
 protected slots:
     void adjustLocation(QUrl url);

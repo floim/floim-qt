@@ -115,6 +115,25 @@ void MainWindow::increaseDatabaseQuota(QWebFrame* frame,QString) {
     origin.setDatabaseQuota(100 * 1024 * 1024);
 }
 
+QIcon MainWindow::iconWithUnread(QString unread, double scale) {
+    QImage base(QString(":/pim.png"));
+    qDebug()<<unread;
+    if (unread != "") {
+        QPainter painter(&base);
+        painter.setPen(Qt::white);
+        painter.setBrush(QBrush(Qt::red));
+
+        int r = base.rect().width()*scale;
+        QRect unreadBox(base.rect().width()-r,0,r,r);
+        painter.drawEllipse(unreadBox);
+
+        painter.setFont(QFont("Arial Bold", (int)ceil(r*0.7)));
+        painter.drawText(unreadBox, Qt::AlignCenter, unread);
+    }
+    QIcon icon = QIcon(QPixmap::fromImage(base));
+    return icon;
+}
+
 void MainWindow::setUnreadCount(int count) {
     QString unread="";
     if (count < 0) {
@@ -122,21 +141,10 @@ void MainWindow::setUnreadCount(int count) {
     } else if (count > 0) {
         unread = QString("%1").arg(count);
     }
-    QImage base(QString(":/pim.png"));
-    if (count != 0) {
-        QPainter painter(&base);
-        painter.setPen(Qt::white);
-        painter.setBrush(QBrush(Qt::red));
-
-        int r = 2*base.rect().width()/3;
-        QRect unreadBox(base.rect().width()-r,0,r,r);
-        painter.drawEllipse(unreadBox);
-        painter.setFont(QFont("Arial", r*0.7));
-        painter.drawText(unreadBox, Qt::AlignCenter, unread);
-    }
-    QIcon icon = QIcon(QPixmap::fromImage(base));
+    QIcon icon = this->iconWithUnread(unread,1/3.0);
     setWindowIcon(icon);
     app->setWindowIcon(icon);
+    icon = this->iconWithUnread(unread,3/4.0);
     trayIcon->setIcon(icon);
 }
 void MainWindow::showMessage(QString icon,QString title,QString msg) {
