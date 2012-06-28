@@ -67,7 +67,7 @@ MainWindow::MainWindow(const QUrl& url, QApplication& _app) {
 
 void MainWindow::createTrayIcon() {
     trayIcon = new QSystemTrayIcon(this);
-    trayIcon->setIcon(QIcon(":/pim.svg"));
+    trayIcon->setIcon(QIcon(":/pim.png"));
     trayIcon->setToolTip("Pim");
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
@@ -122,7 +122,7 @@ void MainWindow::setUnreadCount(int count) {
     } else if (count > 0) {
         unread = QString("%1").arg(count);
     }
-    QImage base(QString(":/pim.svg"));
+    QImage base(QString(":/pim.png"));
     if (count != 0) {
         QPainter painter(&base);
         painter.setPen(Qt::white);

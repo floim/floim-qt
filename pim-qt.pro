@@ -3,7 +3,6 @@ HEADERS   = mainwindow.h bgbridge.h
 SOURCES   = main.cpp mainwindow.cpp bgbridge.cpp
 RESOURCES = images.qrc
 ICON      = pim-osx.icns
-QT += svg
 
 
 # install
