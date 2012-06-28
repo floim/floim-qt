@@ -55,6 +55,14 @@ MainWindow::MainWindow(const QUrl& url, QApplication& _app) {
     QSize size = settings.value("size", QSize(800, 600)).toSize();
     resize(size);
     move(pos);
+
+    if (!QSslSocket::supportsSsl()) {
+        qDebug() << "ERROR: NO SSL SUPPORT!";
+        QMessageBox::critical(this, "No SSL Support",
+            "You don't have the SSL run-time libraries installed - "
+            "you must install these before you can use Pim"
+        );
+    }
 }
 
 void MainWindow::createTrayIcon() {
