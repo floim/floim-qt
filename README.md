@@ -33,7 +33,7 @@ Contributions very welcome!
  1. Clone this repo
  2. Download [pim-osx.icns][pim-osx.icns] into the root dir `./`, and [pim.png][pim.png] into `./images/`
  3. Download and install the Qt SDK if you haven't already (v4.8.1+)
- 4. You can open `pim-qt.pro` in *Qt Creator*.
+ 4. You can open `Pim.pro` in *Qt Creator*.
 
 [Binary/Linux32]: http://s.p.im/Pim-Qt-Ubuntu-32bit.tgz
 [Binary/Linux64]: http://s.p.im/Pim-Qt-Ubuntu-64bit.tgz
