@@ -1,4 +1,4 @@
-QT       += webkit network
+QT       += webkitwidgets network widgets
 HEADERS   = mainwindow.h bgbridge.h
 SOURCES   = main.cpp mainwindow.cpp bgbridge.cpp
 RESOURCES = images.qrc

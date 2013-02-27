@@ -2,6 +2,10 @@
 #include <QtWebKit>
 #include <QSslConfiguration>
 #include <QSslSocket>
+#include <QWebView>
+#include <QWebFrame>
+#include <QMessageBox>
+#include <QApplication>
 #include "mainwindow.h"
 
 MainWindow::MainWindow(const QUrl& url, QApplication& _app) {

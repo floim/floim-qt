@@ -1,5 +1,7 @@
 #include <QtGui>
+#include <QMainWindow>
 #include <QtWebKit>
+#include <QSystemTrayIcon>
 #include "bgbridge.h"
 
 class QWebView;
