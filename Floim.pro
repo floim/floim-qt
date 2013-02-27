@@ -2,13 +2,13 @@ QT       += webkit network
 HEADERS   = mainwindow.h bgbridge.h
 SOURCES   = main.cpp mainwindow.cpp bgbridge.cpp
 RESOURCES = images.qrc
-ICON      = pim-osx.icns
+ICON      = floim-osx.icns
 
 
 # install
-target.path = Pim
+target.path = Floim
 sources.files = $$SOURCES $$HEADERS $$RESOURCES *.pro
-sources.path = Pim
+sources.path = Floim
 INSTALLS += target sources
 
 OTHER_FILES +=

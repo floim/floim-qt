@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file alias="pim.png">images/pim.png</file>
+        <file alias="floim.png">images/floim.png</file>
     </qresource>
 </RCC>

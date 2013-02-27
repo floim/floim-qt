@@ -3,16 +3,16 @@
 
 int main(int argc, char * argv[]) {
     QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("PimQT");
+    QCoreApplication::setApplicationName("FloimQT");
     QCoreApplication::setApplicationVersion("1.0.0");
-    QCoreApplication::setOrganizationName("Pim");
-    QCoreApplication::setOrganizationDomain("p.im");
+    QCoreApplication::setOrganizationName("Floim");
+    QCoreApplication::setOrganizationDomain("floim.com");
     QUrl url;
     if (argc > 1)
         url = QUrl(argv[1]);
     else
 #if defined QT_NO_DEBUG
-        url = QUrl("https://p.im/");
+        url = QUrl("https://floim.com/");
 #else
         url = QUrl("http://localhost:3000/");
 #endif

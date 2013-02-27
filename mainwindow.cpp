@@ -60,15 +60,15 @@ MainWindow::MainWindow(const QUrl& url, QApplication& _app) {
         qDebug() << "ERROR: NO SSL SUPPORT!";
         QMessageBox::critical(this, "No SSL Support",
             "You don't have the SSL run-time libraries installed - "
-            "you must install these before you can use Pim"
+            "you must install these before you can use Floim"
         );
     }
 }
 
 void MainWindow::createTrayIcon() {
     trayIcon = new QSystemTrayIcon(this);
-    trayIcon->setIcon(QIcon(":/pim.png"));
-    trayIcon->setToolTip("Pim");
+    trayIcon->setIcon(QIcon(":/floim.png"));
+    trayIcon->setToolTip("Floim");
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
@@ -116,7 +116,7 @@ void MainWindow::increaseDatabaseQuota(QWebFrame* frame,QString) {
 }
 
 QIcon MainWindow::iconWithUnread(QString unread, double scale) {
-    QImage base(QString(":/pim.png"));
+    QImage base(QString(":/floim.png"));
     qDebug()<<unread;
     if (unread != "") {
         QPainter painter(&base);
